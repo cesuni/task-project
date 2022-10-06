@@ -1,11 +1,11 @@
 from asyncio import tasks
 from turtle import title
 from urllib import request
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse
 from .forms import CreateNewProject, CreateNewTask
 
 from myapp.forms import CreateNewTask
-# realizar consultas
+# importamos los modelos para realizar consultas
 from .models import Project, Task
 from django.shortcuts import render, redirect
 # from django.shortcuts import get_object_or_404
@@ -15,8 +15,10 @@ from django.shortcuts import render, redirect
 
 def index(request):
     title = 'Universidad Politecnica'
+    subtitle = 'Ingenieria en software'
     return render(request, 'index.html', {
-        'title': title
+        'title': title,
+        'subtitle': subtitle
     })
 
 
